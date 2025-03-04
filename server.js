@@ -5,9 +5,7 @@ require('dotenv').config()
 const app=express()
 const RestaurantSchema=require('./schema')
 
-app.listen(process.env.PORT,()=>{
-    console.log(`Server is running on http://localhost:${process.env.PORT}`)
-})
+
 
 //Connecting to MONGO_DB DATABASE
 mongoose.connect(process.env.MONGO_URI)
@@ -109,3 +107,8 @@ app.post('/resto/:id',async(req,res)=>{
     }
 })
 
+
+
+app.listen(process.env.PORT,()=>{
+    console.log(`Server is running on http://localhost:${process.env.PORT}`)
+})
