@@ -74,7 +74,7 @@ app.post('/resto',async(req,res)=>{
     }
 })
 
-app.put('/resto/:id',async(req,res)=>{
+app.put('/change/:id',async(req,res)=>{
     try {
         const {name,location,cuisine,rating,menu}=req.body
 
@@ -93,7 +93,7 @@ app.put('/resto/:id',async(req,res)=>{
     }
 })
 
-app.post('/resto/:id',async(req,res)=>{
+app.delete('/delete/:id',async(req,res)=>{
     try {
         const deletedItem=await RestaurantSchema.findByIdAndDelete(req.params.id)
 
